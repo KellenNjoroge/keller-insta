@@ -1,6 +1,34 @@
-{% extends "base.html" %}
+ {% extends 'base.html'%}
+ {% load bootstrap4 %}
 {% block content %}
 
-    <h1>instagram</h1>
+<div class="col-md-4 offset-md-3">
+    {% for image in images %}
 
-{% endblock%}
+    <div class="row">
+        <div class="card" style="width:45rem;">
+            <div class="card-header">{{image.profile.username}}</div>
+            <img class="card-img-top" id="imagePost" src="{{image.path.url}}" height='400'>
+            <div class="card-body">
+                <h1 class="cart-text"># likes</h1>
+                {% for comment in image.comment.all %}
+                    <p class="cart-text"><strong>{{comment.commentator.username}}</strong>{{comment.comment}}</p>
+                {% endfor %}
+                <form  action="/comment/{{image.id}}" method="post" enctype="multipart/form-data">
+                    {%csrf_token%}
+
+                    {% bootstrap_form comment_form %}
+                    <input type="submit" class="btn btn-success btn-lg" value="Post">
+                </form>
+
+                {% block scripts %}
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                {% bootstrap_javascript %} {% endblock %}
+
+            </div>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+ {% endblock %}

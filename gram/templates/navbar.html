@@ -55,12 +55,15 @@
 
 <nav class="navbar">
 
-    <section class="logo-section"><a href="/home"><img class="logo" src="https://seeklogo.com/images/I/instagram-new-2016-glyph-logo-84CB825424-seeklogo.com.png"/></a>
+    <section class="logo-section"><a href="{% url 'index' %}"><img class="logo" src="https://seeklogo.com/images/I/instagram-new-2016-glyph-logo-84CB825424-seeklogo.com.png"/></a>
         <div></div><img class="logoname" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2000px-Instagram_logo.svg.png"/>
     </section>
+     <!--<form class="search-section" action="{% url 'explore' %}">-->
+        <!--<input class="input-search" type="search" name="profile" aria-label="Search" placeholder="Search for username..."/>-->
+    <!--</form>-->
     <section class="icons-section">
-        <a class="fa fa-compass" href="#"></a>
-        <a class="far fa-heart" href="#"></a>
+        <a class="fa fa-compass" href="{% url 'index' %}"></a>
+        <a class="far fa-heart" href="{% url 'new_post' %}"></a>
         <a class="far fa-user" href="{% url 'profile' %}"></a>
     </section>
 </nav>

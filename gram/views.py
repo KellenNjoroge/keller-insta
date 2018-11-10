@@ -24,9 +24,9 @@ def profile(request):
     profile = Profile.objects.get(user=current_user)
     print(profile)
     # profile = Profile.objects.filter(user=request.user.id)
-    # images = Image.objects.filter(profile = current_user)
+    images = Image.objects.filter(profile = current_user)
 
-    return render(request, 'profile.html', {'profile': profile})
+    return render(request,'profile.html',{'profile':profile,'images':images})
 
 
 # @login_required(login_url='/accounts/login/')
