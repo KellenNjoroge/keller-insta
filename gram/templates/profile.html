@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="col-md-4">
+                <img class="profpic" src="{{profile.profilepic.url}}" height='400'>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <h1> Name    {{profile.user.username}}</h1>
+                    <h1>  emails {{profile.user.email}}</h1>
+                    <!--<a href="" class="btn btn-light" >Edit Profile</a>-->
+                </div>
+                <div class="row">
+                    <h1> Posts</h1> </br>
+                    <h1> Followers</h1>
+                    <h1> Following</h1>
+                </div>
+                <div class="row">
+                    <p>{{profile.user.profile.bio}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="row">-->
+    <!--<div class="col-md-6 offset-md-3">-->
+        <!--{% for image in images %}-->
+
+        <!--<div class="card">-->
+            <!--<img class="card-img-top" src="{{image.path.url}}" height='400'>-->
+            <!--<div class="card-body">-->
+                <!--{% for comment in comments %}-->
+
+                <!--<h1 class="card-title"> <span>image.profile</span> image.comment</h1>-->
+
+                <!--{% endfor %}-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--{% endfor %}-->
+    <!--</div>-->
+<!--</div>-->
+
+{% endblock %}
