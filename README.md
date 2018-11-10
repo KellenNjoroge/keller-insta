@@ -13,6 +13,7 @@ an instagram
     - Ajax
 
 It has the following features
+
     + Like a picture and leave a comment on it.
     + See own profile with all my pictures.
     + Sign in to the application to start using.
