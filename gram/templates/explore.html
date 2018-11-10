@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    {% if profile %}
+      <h2>Found {{ profile|length }} users with related to {{message}}</h2>
+    {% else %}
+      <h2> Found 0 users related to {{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+    <h1>here</h1>
+
+  {% if profile %}
+    {% for prof in profile %}
+      <div class="col-sm-6 col-md-3">
+          <img src="{{prof.profilepic.url}}" height="300">
+        <h1>{{prof.user.username}}</h1>
+      </div>
+    {% endfor %}
+  {% endif %}
+  </div>
+</div>
+{% endblock %}

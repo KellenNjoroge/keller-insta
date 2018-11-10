@@ -24,22 +24,22 @@
         </div>
     </div>
 </div>
-<!--<div class="row">-->
-    <!--<div class="col-md-6 offset-md-3">-->
-        <!--{% for image in images %}-->
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        {% for image in images %}
 
-        <!--<div class="card">-->
-            <!--<img class="card-img-top" src="{{image.path.url}}" height='400'>-->
-            <!--<div class="card-body">-->
-                <!--{% for comment in comments %}-->
+        <div class="card">
+            <img class="card-img-top" src="{{image.path.url}}" height='400'>
+            <div class="card-body">
+                {% for comment in comments %}
 
-                <!--<h1 class="card-title"> <span>image.profile</span> image.comment</h1>-->
+                <h1 class="card-title"> <span>image.profile</span> image.comment</h1>
 
-                <!--{% endfor %}-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--{% endfor %}-->
-    <!--</div>-->
-<!--</div>-->
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}

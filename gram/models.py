@@ -30,7 +30,6 @@ class Profile(models.Model):
 
 
 class Image(models.Model):
-    image = models.CharField(max_length=40)
     caption = models.CharField(max_length=100)
     path = models.ImageField(upload_to='picture/', default=True)
     profile = models.ForeignKey(User, on_delete=models.CASCADE)
