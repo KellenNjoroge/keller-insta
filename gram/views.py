@@ -3,5 +3,5 @@ from django.http import HttpResponse
 
 
 # Create your views here.
-def welcome(request):
+def index(request):
     return HttpResponse('Welcome to Keller Insta')
