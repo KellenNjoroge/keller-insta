@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404
 from peewee import DoesNotExist
 from .models import *
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 from .forms import *
 from django.db import transaction
 
@@ -18,7 +18,7 @@ def index(request):
     return render(request, "index.html", {"images": images, 'comment_form': form, 'comm': comments})
 
 
-# @login_required(login_url='/accounts/login/')
+
 def profile(request):
     current_user = request.user
     profile = Profile.objects.get(user=current_user)
@@ -29,7 +29,7 @@ def profile(request):
     return render(request,'profile.html',{'profile':profile,'images':images})
 
 
-# @login_required(login_url='/accounts/login/')
+
 @transaction.atomic
 def update(request):
     # current_user = User.objects.get(pk=user_id)
@@ -70,7 +70,7 @@ def explore_results(request):
     if 'profile' in request.GET and request.GET["profile"]:
         search_query = request.GET.get("profile")
         searched_profiles = Profile.objects.filter(user__username=search_query)
-        message = f"{search_query}"
+        message = f'{search_query}'
         print(searched_profiles)
 
         return render(request, 'explore.html', {"message": message, "profile": searched_profiles})
@@ -80,7 +80,7 @@ def explore_results(request):
         return render(request, 'explore.html', {"message": message})
 
 
-# @login_required(login_url='/accounts/register/')
+
 def new_post(request):
     current_user = request.user
     if request.method == 'POST':
