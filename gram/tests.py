@@ -24,7 +24,7 @@ class ProfileTest(TestCase):
 
 class ImageTest(TestCase):
     def setUp(self):
-        self.user = User(username='Ras_Kwesi', email='ras@ras.com', password='passwadd')
+        self.user = User(username='Keller', email='kell@kell.com', password='passwadd')
         self.ras = Profile(bio='A python Programmer', contact='054234444', user=self.user)
         self.one = Image(caption = 'You only live once', image='YOLO', profile=self.user, likes=2)
 
